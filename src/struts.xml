@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.1//EN"
+	"http://struts.apache.org/dtds/struts-2.1.dtd">
+
+<struts>
+	
+	<!-- 配置开启开发模式 -->
+	<constant name="struts.devMode" value="true" />
+
+	<!-- 配置编码 -->
+	<constant name="struts.i18n.encoding" value="UTF-8" /> <!-- internationalization -->
+
+	
+
+	<package name="front" extends="struts-default" namespace="/">
+	
+		<action name="*-*" class="com.sy.bbs.action.{1}Action" method="{2}">
+			<result name="registersuccess">/login.jsp</result>
+			<result name="loginsuccess">/index.jsp</result>
+			<result name="queryuserinfosuccess">/center.jsp</result>
+			<result name="changeuserinfosuccess">/center.jsp</result>
+			<result name="changepassword">/password.jsp</result>
+			<result name="publishsuccess">/topic.jsp</result>
+			<result name="listtopicsuccess">/main.jsp</result>
+			<result name="querytopicsuccess">/topic.jsp</result>
+			<result name="replysuccess">/topic.jsp</result>
+			<result name="mytopic">/mytopic.jsp</result>
+			<result name="myanswer">/myanswer.jsp</result>
+			<result name="error">/{2}.jsp</result>
+		</action>
+		
+	</package>
+	
+	<package name="admin" extends="struts-default" namespace="/admin">
+		
+		<action name="*-*" class="com.sy.bbs.action.{1}Action" method="{2}">
+			<result name="loginsuccess">/admin/main.jsp</result>
+			<result name="listtopicsuccess">/admin/topiclist.jsp</result>
+			<result name="listanswersuccess">/admin/answerlist.jsp</result>
+			<result name="listusersuccess">/admin/userlist.jsp</result>
+			<result name="deletetopicsuccess">/admin/topiclist.jsp</result>
+			<result name="deleteanswersuccess">/admin/answerlist.jsp</result>
+			<result name="deleteusersuccess">/admin/userlist.jsp</result>
+			<result name="querytopicsuccess">/admin/topicdetail.jsp</result>
+			<result name="queryuserinfosuccess">/admin/userdetail.jsp</result>
+			<result name="listvisitorsuccess">/admin/visitorlist.jsp</result>
+       		<result name="error">/admin/{2}.jsp</result>
+       	</action>
+	</package>
+	
+	<!-- <package name="counteraction" extends="struts-default">
+		<action name="counter" class="com.sy.bbs.action.CounterAction">
+			<result></result>
+		</action>
+	</package> -->
+	
+	<!-- 配置默认action -->
+	<!-- <package name="default" namespace="/" extends="struts-default">
+    	<default-action-ref name="index"></default-action-ref>
+    	<action name="index">
+    		<result>/defaultaction.html</result>
+    	</action>
+    </package> -->
+</struts>
+	
