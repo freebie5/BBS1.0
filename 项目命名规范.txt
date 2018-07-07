@@ -1,0 +1,31 @@
+﻿数据库命名：
+
+	和项目名称一致
+
+数据表命名：
+
+	t_表名：例如：t_user
+	
+数据表字段命名：
+
+	和类的属性一致：例如：User类name字段，则数据表字段为name
+	
+包和类命名：
+
+	用结构层次划分，如下
+	com.sy.bbs.action：action类
+	com.sy.bbs.aop：aop类
+	com.sy.bbs.dao：dao类
+	com.sy.bbs.model：数据实体类
+	com.sy.bbs.service：服务类
+	com.sy.bbs.util：工具类
+	com.sy.bbs.vo：数据传输对象类
+
+url域名空间：
+
+	前台：/
+	后台：/admin
+	
+jsp命名：
+
+	*-*：例如，模块名-功能名

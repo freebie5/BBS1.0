@@ -1,0 +1,13 @@
+﻿1.获取浏览器中文数据，action，service，dao层都没有问题，数据库编码utf-8（手动插入中文数据也没问题），
+确认为Hibernate插入中文字符问题，解决办法：
+
+	1）ssh整合jdbc.properties，修改jdbc连接url为：
+jdbc.url=jdbc:mysql://localhost:3306/ssh?useUnicode=true&characterEncoding=UTF8
+
+	2）hibernate.cfg.xml情况，修改jdbc连接url为：
+<property name="connection.url">jdbc:mysql://localhost:3306/test?useUnicode=true&amp;characterEncoding=UTF8</property>
+
+2.get方式发送http请求，url参数包含中文字符，action获取中文字符出现乱码，解决办法：
+
+	1）获取url中文参数时使用如下代码：
+String name = new String(userInfo.getName().getBytes("ISO-8859-1"), "UTF-8");
